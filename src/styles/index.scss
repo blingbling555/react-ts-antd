@@ -1,0 +1,34 @@
+// 看文件前面都有_,但是下面引入的不用写_,这是sass的模块化，只能引入 ，不能编译为css文件
+// config
+@import "variables";
+
+//layout
+@import "reboot";
+
+//mixin
+@import "mixin";
+
+// animation
+@import "animation";
+// button
+
+@import "../components/Button/style";
+
+// menu
+
+//@import "../components/Menu/style";
+
+// icon
+//@import "../components/Icon/style";
+
+//input
+//@import "../components/Input/style";
+
+//auto-complete
+//@import "../components/AutoComplete/style";
+
+//upload
+//@import "../components/Upload/style";
+
+//progress
+//@import "../components/Progress/style";
