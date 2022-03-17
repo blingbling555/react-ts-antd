@@ -22,5 +22,10 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "components/**/*.test.tsx",
+    "components/**/*.test.ts"
   ]
 }

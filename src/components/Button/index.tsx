@@ -22,8 +22,7 @@ interface BaseButtonsProps {
   href?: string,
   className?: string,
   autoFocus?: boolean,
-  children?: React.ReactNode,
-  [propsName: string]: any
+  children?: React.ReactNode
 }
 // 交叉类型 把两种类型合并在一起
 type NativeButtonProps = BaseButtonsProps & React.ButtonHTMLAttributes<HTMLElement>

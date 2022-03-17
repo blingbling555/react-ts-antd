@@ -90,6 +90,40 @@ export default Hello
 
 # 3、classnames使用
 ```bash
+// 安装
 npm i classnames -S
 npm i @types/classnames -S
+// 使用
+import classnames from 'classnames'
+const classNames = classnames('btn', className, {
+[`btn-${buttonSize}`]: buttonSize,
+[`btn-${buttonType}`]: buttonType,
+'btn-disabled': buttonType === ButtonType.Link && disabled
+})
 ```
+
+# 4、button组件编写
+原生的参数
+```ts
+// 交叉类型 把两种类型合并在一起
+type NativeButtonProps = BaseButtonsProps & React.ButtonHTMLAttributes<HTMLElement>
+type anchorButtonProps = BaseButtonsProps & React.AnchorHTMLAttributes<HTMLElement>
+export type ButtonProps = Partial<NativeButtonProps & anchorButtonProps>
+```
+
+# 5、单元测试Jest
+https://www.jestjs.cn/
+react里面内置了Jest,直接使用npm run test可以运行起来
+> 注意：期间我遇到了一个问题 一直运行不成功，跟node版本有关,用14.17.0可以运行
+![img.png](./imgMd/img2.png)
+```bash
+npx jest 测试名称
+npx jest 测试名称 --watch
+```
+看文档我们可以看jest
+jest-dom增加了一些dom的断言
+
+### react用到测试单元插件
+  - "@testing-library/jest-dom": "^5.16.2", 增加了一些dom的断言
+  - "@testing-library/react": "^11.2.7", 常用的断言
+  - "@testing-library/user-event": "^13.5.0",

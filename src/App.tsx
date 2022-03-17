@@ -1,7 +1,7 @@
 import React from 'react';
 // import './App.css';
 import './styles/index.scss'
-import ButtonTest from "./components/Button/test";
+import ButtonTest from "./components/Button/test2";
 
 function App() {
   return (
