@@ -127,3 +127,27 @@ jest-dom增加了一些dom的断言
   - "@testing-library/jest-dom": "^5.16.2", 增加了一些dom的断言
   - "@testing-library/react": "^11.2.7", 常用的断言
   - "@testing-library/user-event": "^13.5.0",
+
+
+# 6、react字体图标
+- https://www.npmjs.com/package/@fortawesome/react-fontawesome
+- https://fontawesome.com/v6/docs/web/use-with/react/
+- https://fontawesome.cn/#
+- https://fontawesome.dashgame.com/
+- https://github.com/FortAwesome/react-fontawesome/
+- https://fontawesome.com/v6/docs/web/use-with/react/
+
+### 字体图标使用
+```bash
+"@fortawesome/fontawesome-svg-core": "^6.1.0",
+"@fortawesome/free-regular-svg-icons": "^6.1.0",
+"@fortawesome/free-solid-svg-icons": "^6.1.0",
+"@fortawesome/react-fontawesome": "^0.1.18",
+```
+
+
+```react
+import {  FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from "@fortawesome/free-solid-svg-icons"
+<FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
+```

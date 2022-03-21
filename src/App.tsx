@@ -3,12 +3,17 @@ import React from 'react';
 import './styles/index.scss'
 import ButtonTest from "./components/Button/test2";
 import MenuTest from "./components/Menu/test";
+import {  FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import IconTest from "./components/Icon/iconTest";
 function App() {
   return (
     <div className="App">
+     <h2>图标测试</h2>
+
+      <IconTest></IconTest>
       <h2>菜单</h2>
-      <MenuTest></MenuTest>
-      <ButtonTest></ButtonTest>
+      {/*<MenuTest></MenuTest>*/}
+      {/*<ButtonTest></ButtonTest>*/}
 
     </div>
   );
