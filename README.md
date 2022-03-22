@@ -151,3 +151,9 @@ import {  FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
 ```
+
+# 动画transition
+```js
+npm install react-transition-group -S
+```
+https://www.jianshu.com/p/49fa164b938d

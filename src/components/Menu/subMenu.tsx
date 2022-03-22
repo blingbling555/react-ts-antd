@@ -2,6 +2,8 @@ import React, {useContext, useState} from "react";
 import classnames from "classnames";
 import {MenuContext, MenuMode} from "./menu";
 import {MenuItemProps} from "./menuItem";
+import Icon from "../Icon/icon";
+import {faAngleDown} from '@fortawesome/free-solid-svg-icons'
 
 export interface SubMenuProps {
   index?: string,
@@ -20,6 +22,9 @@ const SubMenu:React.FC<SubMenuProps> = (props) => {
 
   const classes = classnames('menu-item submenu-item', className, {
     'is-active': context.index === index,
+    'is-opend': menuOpen,
+    'is-vertical': context.mode === MenuMode.Vertical
+
   })
   const subMenuClasses = classnames('viking-submenu', {
     'menu-opened': menuOpen
@@ -35,6 +40,7 @@ const SubMenu:React.FC<SubMenuProps> = (props) => {
     e.preventDefault()
     timer = setTimeout(() => {
       setMenuOpen(toggle)
+
     }, 300)
 
   }
@@ -67,7 +73,9 @@ const SubMenu:React.FC<SubMenuProps> = (props) => {
       <div
         className="submenu-title"
         {...clickEvent}
-      >{ title }</div>
+      >{ title }
+        <Icon icon={faAngleDown} className='arrow-icon'></Icon>
+      </div>
       {renderChild()}
     </li>
   )
