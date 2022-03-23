@@ -7,6 +7,11 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addons": "^6.4.19",
+    "@storybook/react": "^6.4.19",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.5.0",
@@ -17,7 +22,9 @@
     "@types/react-dom": "^17.0.13",
     "classnames": "^2.3.1",
     "node-sass": "^7.0.1",
+    "raw-loader": "^4.0.2",
     "react": "^17.0.2",
+    "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "react-transition-group": "^4.3.0",
@@ -30,7 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "storybook": "start-storybook"
   },
   "eslintConfig": {
     "extends": [
@@ -51,8 +59,17 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.4.19",
     "@types/react-transition-group": "^4.4.4",
-    "commitizen": "^4.2.4"
+    "babel-loader": "^8.2.4",
+    "commitizen": "^4.2.4",
+    "css-loader": "^6.7.1",
+    "node-sass": "^7.0.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1"
   },
   "config": {
     "commitizen": {

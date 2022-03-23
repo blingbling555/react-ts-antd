@@ -16,8 +16,8 @@ export enum ButtonType {
 }
 
 interface BaseButtonsProps {
-  buttonSize?: ButtonSize,
-  buttonType?: ButtonType,
+  buttonsize?: ButtonSize,
+  buttontype?: ButtonType,
   disabled?: boolean,
   href?: string,
   className?: string,
@@ -31,14 +31,14 @@ type anchorButtonProps = BaseButtonsProps & React.AnchorHTMLAttributes<HTMLEleme
 export type ButtonProps = Partial<NativeButtonProps & anchorButtonProps>
 // console.log(ButtonProps)
 const Button: React.FC<ButtonProps> = (props) => {
-  const {disabled, children, buttonSize, buttonType, href, className, ...restProps} = props
-  // const classNames = `button button-${buttonSize} button-${buttonType}`
+  const {disabled, children, buttonsize, buttontype, href, className, ...restProps} = props
+  // const classNames = `button button-${buttonsize} button-${buttontype}`
   const classNames = classnames('btn', className, {
-    [`btn-${buttonSize}`]: buttonSize,
-    [`btn-${buttonType}`]: buttonType,
-    'btn-disabled': buttonType === ButtonType.Link && disabled
+    [`btn-${buttonsize}`]: buttonsize,
+    [`btn-${buttontype}`]: buttontype,
+    'btn-disabled': buttontype === ButtonType.Link && disabled
   })
-  if (buttonType === ButtonType.Link && href) {
+  if (buttontype === ButtonType.Link && href) {
     return (
       <a
         href={href}
@@ -58,8 +58,8 @@ const Button: React.FC<ButtonProps> = (props) => {
 }
 
 Button.defaultProps = {
-  buttonSize: ButtonSize.Normal,
-  buttonType: ButtonType.Default,
+  buttonsize: ButtonSize.Normal,
+  buttontype: ButtonType.Default,
   disabled: false,
   autoFocus: false,
   className: ''

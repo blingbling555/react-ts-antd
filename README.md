@@ -157,3 +157,61 @@ import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 npm install react-transition-group -S
 ```
 https://www.jianshu.com/p/49fa164b938d
+
+# Storybook
+写文档的工具
+
+### 安装
+- 自动安装
+官网地址： https://storybook.js.org/docs/6.0/react/get-started/install
+
+不知道什么原因，下面的命令安装不成功，下面只有手动来执行了
+```bash
+npx -p @storybook/cli sb init
+// 如果使用Create React APP ，你应当使用一下命令：
+npx -p @storybook/cli sb init --type react_scripts
+```
+
+- 手动安装
+  依次安装：
+  ```bash
+    npm install @storybook/react --save-dev
+    npm install react react-dom --save
+    npm install babel-loader @babel/core --save-dev
+   ```
+在package.json添加npm 命令：
+```bash
+{
+"scripts": {
+  "storybook": "start-storybook"
+}
+}
+```
+创建 .storebook/main.js:
+```bash
+module.exports = {
+    stories: ['../src/**/*.stories.[tj]sx'],
+};
+```
+创建第一个Store，新建文件../src/index/stories.js :
+```tsx
+import React from 'react';
+import { Button } from '@storybook/react/demo';
+
+export default { title: 'Button' };
+
+export const withText = () => <Button>Hello Button</Button>;
+
+export const withEmoji = () => (
+  <Button>
+    <span role="img" aria-label="so cool">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+);
+```
+
+运行
+```bash
+npm run storybook
+```
