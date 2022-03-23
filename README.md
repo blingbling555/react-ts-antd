@@ -157,3 +157,57 @@ import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 npm install react-transition-group -S
 ```
 https://www.jianshu.com/p/49fa164b938d
+
+
+# storybook使用
+官网 https://storybook.js.org/docs/react/configure/webpack#extending-storybooks-webpack-config
+课程版本问题汇总 https://shimo.im/docs/tgP9yYy9jp8HtghT/read
+安装
+- 自动安装 - 不知道原因安装不成功
+```js
+npx -p @storybook/cli sb init
+```
+如果使用Create React APP ，你应当使用一下命令：
+```js
+npx -p @storybook/cli sb init --type react_scripts
+```
+- 手动安装
+```js
+npm install @storybook/react --save-dev
+
+npm install react react-dom --save
+npm install babel-loader @babel/core --save-dev
+```
+在package.json添加npm 命令：
+```js
+{
+"scripts": {
+  "storybook": "start-storybook"
+}
+}
+```
+创建 .storebook/main.js:
+```js
+module.exports = {
+    stories: ['../src/**/*.stories.[tj]s'],
+};
+```
+创建第一个Store，新建文件../src/index/stories.js :
+```tsx
+import React from 'react';
+import { Button } from '@storybook/react/demo';
+
+export default { title: 'Button' };
+
+export const withText = () => <Button>Hello Button</Button>;
+
+export const withEmoji = () => (
+  <Button>
+    <span role="img" aria-label="so cool">
+      😀 😎 👍 💯
+    </span>
+  </Button>
+);
+```
+遇到了一个问题用scss问题
+https://github.com/storybookjs/presets/issues/220
